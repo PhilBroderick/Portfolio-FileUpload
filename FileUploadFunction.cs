@@ -14,7 +14,7 @@ namespace BlobFileUpload
     {
         [FunctionName("FileUploadFunction")]
         public static async Task<IActionResult> Run(
-            [HttpTrigger(AuthorizationLevel.Admin, "post", Route = null)] HttpRequest req,
+            [HttpTrigger(AuthorizationLevel.Function, "post", Route = null)] HttpRequest req,
             [Blob("images", FileAccess.Write)] CloudBlobContainer blobContainer,
             ILogger log)
         {
